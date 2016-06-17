@@ -1,0 +1,27 @@
+<div ng-app="loginPage" id="loginPage">
+	<div ng-controller="LoginPageController as controller">
+		<form name="loginForm" ng-submit="controller.login()" novalidate>
+			<div class="container col-xs-8">
+				<div class="row">
+					<div class="form-group col-xs-4" ng-class="{ 'has-error' : (playerForm.name.$invalid && !playerForm.name.$pristine) || (usernameExists) }">
+					  <label for="name">Username:</label>
+					  <input type="text" name="name" class="form-control" id="name" ng-model="credentials.username" required>
+					  <p ng-show="playerForm.name.$invalid && !playerForm.name.$pristine" class="help-block">Username is required</p>
+					  <p ng-show="usernameExists" class="help-block">Entered username already exists.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-4" ng-class="{ 'has-error' : playerForm.password.$invalid && !playerForm.password.$pristine }">
+					  <label for="password">Password:</label>
+					  <input type="password" class="form-control" name="password" rows="5" id="password" ng-model="credentials.password" ng-minlength="8" ng-maxlength="20" required>
+					  <p ng-show="playerForm.password.$error.minlength" class="help-block">Password should have at least 8 characters.</p>
+  					  <p ng-show="playerForm.password.$error.maxlength" class="help-block">Password is too long.</p>
+  					  <p ng-show="playerForm.password.$error.required && playerForm.password.$invalid && !playerForm.password.$pristine" class="help-block">Password required.</p>
+					</div>
+				</div>
+
+				<button type="submit" class="btn btn-primary" ng-disabled="playerForm.$invalid">Login</button>
+			</div>
+		</form>
+	</div>
+</div>
