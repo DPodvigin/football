@@ -4,6 +4,7 @@
 		<title>Football bets</title>
 		<script src="assets/components/angular/angular.min.js"></script>
 		<link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/common.css">
 		<script src="assets/components/jquery/dist/jquery.min.js"></script>
 		<script src="assets/components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="assets/components/angular-route/angular-route.min.js"></script>
@@ -14,6 +15,8 @@
 		<script src="js/create-player/create-player.controller.js"></script>
 		<script src="js/login-page/login-page.app.js"></script>
 		<script src="js/login-page/login-page.controller.js"></script>
+		<script src="js/create-bet/create-bet.app.js"></script>
+		<script src="js/create-bet/create-bet.controller.js"></script>
 	</head>
 	<body ng-controller="MainAppController">
 		<nav class="navbar navbar-default">
@@ -23,7 +26,7 @@
 		    </div>
 		    <ul class="nav navbar-nav">
 		      <li class="active"><a href="#">Home</a></li>
-		      <li><a href="#">Page 1</a></li>
+		      <li><a href="#/createBet">Create bet</a></li>
 		      <li><a ng-click="logout()">Logout</a></li>
 		      <li><a ng-show="userRole == 'ROLE_ADMIN'" href="#/createPlayer">Create player</a></li>
 		    </ul>

@@ -1,10 +1,13 @@
 package com.football.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +24,9 @@ public class Player {
 	
 	@Column(name = "PASSWORD")
 	private String password;
+	
+	@OneToMany(mappedBy="owner")
+	private Set<GlobalBet> globalBets;
 	
 	public Long getId() {
 		return id;
@@ -44,6 +50,14 @@ public class Player {
 	
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public void setGlobalBets(Set<GlobalBet> globalBets) {
+		this.globalBets = globalBets;
+	}
+	
+	public Set<GlobalBet> getGlobalBets() {
+		return globalBets;
 	}
 
 }

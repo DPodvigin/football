@@ -9,6 +9,10 @@ angular.module('mainApp')
 				   		.when('/loginPage', {
 				   			controller: 'LoginPageController',
 				   			templateUrl: 'js/login-page/login-page.template.html'
+				   		})
+				   		.when('/createBet', {
+				   			controller: 'CreateBetController',
+				   			templateUrl: 'js/create-bet/create-bet.template.html'
 				   		});
 	   			}
 	   ]);

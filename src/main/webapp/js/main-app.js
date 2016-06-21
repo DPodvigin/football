@@ -1,1 +1,1 @@
-angular.module('mainApp', ['ngRoute', 'createPlayer', 'loginPage']);
+angular.module('mainApp', ['ngRoute', 'createPlayer', 'loginPage', 'createBet']);

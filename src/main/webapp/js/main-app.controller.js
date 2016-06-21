@@ -8,7 +8,6 @@ angular.module('mainApp')
 		   $scope.init = function() {
 			   $http.get('/user').then(function success(response) {
 			    	$rootScope.userRole = response.data.authorities[0].authority;
-			    	console.log($rootScope.userRole);
 			   });
 		   };
 		   $scope.init();
